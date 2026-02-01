@@ -1,9 +1,7 @@
 import streamlit as st
 import pickle
 
-# -----------------------------
-# Load model and vectorizer
-# -----------------------------
+
 @st.cache_resource
 def load_artifacts():
     with open("spam_bow_nb.pkl", "rb") as f:
@@ -17,9 +15,7 @@ def load_artifacts():
 
 model, vectorizer = load_artifacts()
 
-# -----------------------------
-# Streamlit UI
-# -----------------------------
+
 st.set_page_config(page_title="Spam Detection", layout="centered")
 
 st.title("📩 SMS Spam Detection")
